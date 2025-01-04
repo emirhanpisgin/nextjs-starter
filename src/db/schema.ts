@@ -1,3 +1,4 @@
+import { $Type } from "drizzle-orm";
 import { boolean, timestamp, pgTable, text, primaryKey, integer } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
 
@@ -83,3 +84,7 @@ export const authenticators = pgTable(
 		},
 	]
 );
+
+export type User = typeof users.$inferSelect;
+export type NewUser = typeof users.$inferInsert;
+export type UpdateUser = Partial<NewUser>;
