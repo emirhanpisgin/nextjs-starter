@@ -1,4 +1,4 @@
-import { integer, pgTable, primaryKey, text, uuid } from "drizzle-orm/pg-core";
+import { integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core";
 import { AdapterAccountType } from "next-auth/adapters";
 import { usersTable } from ".";
 import { relations } from "drizzle-orm";
@@ -6,7 +6,7 @@ import { relations } from "drizzle-orm";
 export const accountsTable = pgTable(
 	"account",
 	{
-		userId: uuid("userId")
+		userId: text("userId")
 			.notNull()
 			.references(() => usersTable.id, { onDelete: "cascade" }),
 		type: text("type").$type<AdapterAccountType>().notNull(),
