@@ -7,10 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:generate": "bun drizzle-kit generate",
-    "db:migrate": "bun drizzle-kit migrate",
-    "db:push": "bun run db:generate && bun run db:migrate",
-    "db:studio": "bun drizzle-kit studio"
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.7.4",
