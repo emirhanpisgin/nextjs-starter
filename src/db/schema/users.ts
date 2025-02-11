@@ -5,7 +5,6 @@ import { sessionsTable, authenticatorsTable, accountsTable } from ".";
 export const usersTable = pgTable("user", {
 	id: uuid().primaryKey().defaultRandom(),
 	name: text(),
-	username: text().unique(),
 	email: text().unique(),
 	emailVerified: timestamp({ mode: "date" }),
 	image: text(),
